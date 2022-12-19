@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import GetData from './components/GetData';
+
+const dataURL = 'http://localhost:7070/data';
+const errorURL = 'http://localhost:7070/error ';
+const loadingURL = 'http://localhost:7070/loading';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GetData url={dataURL}/>
+      <GetData url={errorURL}/>
+      <GetData url={loadingURL}/>
     </div>
   );
 }
